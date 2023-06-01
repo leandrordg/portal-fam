@@ -1,30 +1,30 @@
 import Image from "next/image";
-import Link from "next/link";
+import SidebarLink from "./sidebarLink";
 
 const sidebarLinks = [
-  { nome: "Início", href: "/" },
-  { nome: "Login", href: "/login" },
-  { nome: "Cadastro", href: "/cadastro" },
-  { nome: "Acervo Digital", href: "/acervo" },
-  { nome: "Biblioteca", href: "/biblioteca" },
-  { nome: "Atividade Complementar", href: "/atividade" },
-  { nome: "Calendário de Provas", href: "/calendario" },
-  { nome: "E-mail institucional", href: "/institucional" },
-  { nome: "Emissão de Boletos", href: "/boletos" },
-  { nome: "Estacionamento", href: "/estacionamento" },
-  { nome: "Eventos", href: "/eventos" },
-  { nome: "Faltas", href: "/faltas" },
-  { nome: "Notas", href: "/notas" },
-  { nome: "Gabaritos", href: "/gabaritos" },
-  { nome: "Horários", href: "/horarios" },
-  { nome: "Plano de Ensino", href: "/plano-ensino" },
-  { nome: "Requerimentos", href: "/requerimentos" },
-  { nome: "Tutoriais", href: "/tutoriais" },
+  { name: "Início", href: "/portal" },
+  { name: "Login", href: "/portal/login" },
+  { name: "Cadastro", href: "/portal/cadastro" },
+  { name: "Acervo Digital", href: "/portal/acervo" },
+  { name: "Biblioteca", href: "/portal/biblioteca" },
+  { name: "Atividade Complementar", href: "/portal/atividade" },
+  { name: "Calendário de Provas", href: "/portal/calendario-provas" },
+  { name: "E-mail institucional", href: "/portal/institucional" },
+  { name: "Emissão de Boletos", href: "/portal/emissao-boletos" },
+  { name: "Estacionamento", href: "/portal/estacionamento" },
+  { name: "Eventos", href: "/portal/eventos" },
+  { name: "Faltas", href: "/portal/faltas" },
+  { name: "Notas", href: "/portal/notas" },
+  { name: "Gabaritos", href: "/portal/gabaritos" },
+  { name: "Horários", href: "/portal/horarios" },
+  { name: "Plano de Ensino", href: "/portal/plano-ensino" },
+  { name: "Requerimentos", href: "/portal/requerimentos" },
+  { name: "Tutoriais", href: "/portal/tutoriais" },
 ];
 
 const Sidebar = () => {
   return (
-    <div className="hidden sm:flex flex-col flex-1">
+    <div className="hidden md:flex flex-col flex-1 max-w-[350px] sticky top-20">
       <div className="flex flex-col text-center items-center gap-4 p-4">
         <Image
           src="/eu.jpg"
@@ -47,9 +47,7 @@ const Sidebar = () => {
 
       <nav className="my-4 flex flex-col w-full">
         {sidebarLinks.map((link) => (
-          <Link href={link.href} key={link.href} className="sidebarLink">
-            {link.nome}
-          </Link>
+          <SidebarLink key={link.href} href={link.href} name={link.name} />
         ))}
       </nav>
     </div>

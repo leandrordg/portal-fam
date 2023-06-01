@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import Footer from "./components/footer";
+import Header from "./components/header";
 
 const Home = () => {
   return (
@@ -23,9 +25,12 @@ const Home = () => {
               className="p-2 border rounded-md outline-none"
             />
 
-            <button className="text-sm p-2 bg-[#FFDE2B] rounded-md">
+            <Link
+              href={"/portal"}
+              className="text-sm p-2 bg-[#FFDE2B] rounded-md text-center"
+            >
               Entrar
-            </button>
+            </Link>
 
             <Link
               href="/redefinir"
