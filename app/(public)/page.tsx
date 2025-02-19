@@ -1,17 +1,18 @@
 import Link from "next/link";
 
-import { Button } from "@/components/ui/button";
-import { ChevronRightIcon, LogInIcon } from "lucide-react";
+import { ChevronRightIcon } from "lucide-react";
 
-export default function HomePage() {
+import { Button } from "@/components/ui/button";
+
+export default async function HomePage() {
   return (
-    <main className="max-w-7xl mx-auto p-4 lg:p-8 space-y-8">
+    <main className="max-w-7xl mx-auto py-16 px-4 lg:px-8 space-y-8">
       <section>
-        <h3 className="text-lg font-medium">Portal do Aluno</h3>
-        <h1 className="text-4xl font-bold tracking-tighter">
+        <h3 className="md:text-lg font-medium">Portal do Aluno</h3>
+        <h1 className="text-3xl md:text-4xl font-bold tracking-tighter text-balance">
           Faculdade de Americana
         </h1>
-        <p className="text-muted-foreground mt-4">
+        <p className="text-sm md:text-base text-muted-foreground mt-4">
           Acesse o portal do aluno para visualizar todas as informações sobre a
           sua graduação.
         </p>
@@ -19,14 +20,14 @@ export default function HomePage() {
 
       <section className="flex flex-col md:flex-row md:items-center gap-4">
         <Button variant="outline" asChild>
-          <Link href="/acessar">
-            Acessar <LogInIcon />
+          <Link href="/dashboard">
+            acessar o portal <ChevronRightIcon />
           </Link>
         </Button>
 
         <Button variant="link" asChild>
           <Link href="/noticias">
-            Ver notícias <ChevronRightIcon />
+            ver notícias <ChevronRightIcon />
           </Link>
         </Button>
       </section>
