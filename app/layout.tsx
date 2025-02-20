@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
+import { TRPCProvider } from "@/trpc/client";
 import { ClerkProvider } from "@clerk/nextjs";
 import NextTopLoader from "nextjs-toploader";
 
@@ -24,7 +25,7 @@ export default function RootLayout({
       <html lang="pt-BR">
         <body className={`${inter.className}`}>
           <NextTopLoader color="#0E2E7C" showSpinner={false} />
-          {children}
+          <TRPCProvider>{children}</TRPCProvider>
         </body>
       </html>
     </ClerkProvider>

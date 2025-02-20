@@ -26,7 +26,7 @@ export default async function HomePage() {
         </Button>
 
         <Button variant="link" asChild>
-          <Link href="/noticias">
+          <Link href="/news">
             ver notícias <ChevronRightIcon />
           </Link>
         </Button>

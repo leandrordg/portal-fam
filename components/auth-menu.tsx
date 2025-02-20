@@ -16,6 +16,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import Link from "next/link";
 
 export async function AuthMenu() {
   const user = await currentUser();
@@ -46,18 +47,24 @@ export async function AuthMenu() {
           </p>
         </div>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          <UserRoundIcon />
-          Minha conta
+        <DropdownMenuItem asChild>
+          <Link href="/account">
+            <UserRoundIcon />
+            Minha conta
+          </Link>
         </DropdownMenuItem>
-        <DropdownMenuItem>
-          <SettingsIcon />
-          Configurações
+        <DropdownMenuItem asChild>
+          <Link href="/account/settings">
+            <SettingsIcon />
+            Configurações
+          </Link>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          <PhoneIcon />
-          Suporte
+        <DropdownMenuItem asChild>
+          <Link href="/support">
+            <PhoneIcon />
+            Suporte
+          </Link>
         </DropdownMenuItem>
         <SignOutButton>
           <DropdownMenuItem>

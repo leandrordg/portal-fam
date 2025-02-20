@@ -8,11 +8,11 @@ export async function Header() {
     <header className="border-b">
       <div className="flex items-center gap-4 max-w-7xl mx-auto p-4 md:px-8">
         <Link href="/">
-          <div className="relative size-8 rounded-lg overflow-clip">
+          <div className="relative size-8 rounded-lg overflow-clip group transform">
             <Image
               src="/images/logo-square.png"
               alt="Faculdade de Americana"
-              className="object-cover bg-muted"
+              className="object-cover bg-muted group-hover:scale-105 transition-transform"
               fill
             />
           </div>
