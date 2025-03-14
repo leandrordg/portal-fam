@@ -8,7 +8,7 @@ import type { ROLE } from "@prisma/client";
 import { LogOutIcon, ShieldIcon } from "lucide-react";
 
 type Props = {
-  role: ROLE;
+  role: ROLE | undefined;
 };
 
 export function ChangeMode({ role }: Props) {

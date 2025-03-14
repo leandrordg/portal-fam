@@ -1,8 +1,9 @@
 import Link from "next/link";
 
-import { Button } from "@/components/ui/button";
 import { currentRole } from "@/lib/role";
 import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
+
+import { Button } from "@/components/ui/button";
 
 export default function Page() {
   const role = currentRole();
@@ -12,7 +13,7 @@ export default function Page() {
     STUDENT: "/dashboard",
     TEACHER: "/teacher",
     ADMIN: "/admin",
-  }[role];
+  }[role || "GUEST"];
 
   return (
     <main className="max-w-screen-lg mx-auto w-full p-6 lg:p-10">

@@ -111,18 +111,17 @@ const adminLinks: Link[] = [
 ];
 
 type Props = {
-  role: ROLE;
+  role: ROLE | undefined;
   setOpen?: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export function NavigationMenu({ role, setOpen }: Props) {
-  const links =
-    {
-      GUEST: guestLinks,
-      STUDENT: studentLinks,
-      TEACHER: teacherLinks,
-      ADMIN: adminLinks,
-    }[role] || guestLinks;
+  const links = {
+    GUEST: guestLinks,
+    STUDENT: studentLinks,
+    TEACHER: teacherLinks,
+    ADMIN: adminLinks,
+  }[role ?? "GUEST"];
 
   return (
     <ul className="flex flex-col gap-2">

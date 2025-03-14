@@ -10,7 +10,7 @@ import type { ROLE } from "@prisma/client";
 import { MenuIcon } from "lucide-react";
 
 type Props = {
-  role: ROLE;
+  role: ROLE | undefined;
 };
 
 export function MobileMenu({ role }: Props) {

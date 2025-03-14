@@ -10,7 +10,7 @@ const checkRole = (role: ROLE) => {
 const currentRole = () => {
   const { sessionClaims } = auth();
 
-  return sessionClaims?.metadata.user_role!;
+  return sessionClaims?.metadata.user_role;
 };
 
 export { checkRole, currentRole };

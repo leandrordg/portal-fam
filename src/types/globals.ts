@@ -12,7 +12,7 @@ declare global {
 
   interface CustomJwtSessionClaims {
     metadata: {
-      user_role?: ROLE;
+      user_role: ROLE;
     };
   }
 }

@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { ROLE } from "@prisma/client";
 
 type Props = {
-  role: ROLE;
+  role: ROLE | undefined;
 };
 
 export function Logo({ role }: Props) {
@@ -13,7 +13,7 @@ export function Logo({ role }: Props) {
     STUDENT: "/dashboard",
     TEACHER: "/teacher",
     ADMIN: "/admin",
-  }[role];
+  }[role || "GUEST"];
 
   return (
     <Link href={currentRoute || "/"}>
